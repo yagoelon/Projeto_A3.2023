@@ -5,17 +5,11 @@ body, html {
     background-color: #F7F7F7;
 }
 
-.calendar {
+.planner {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 20px;
-}
-
-.week {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 .day {
@@ -24,6 +18,8 @@ body, html {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    margin: 10px;
+    max-width: 300px;
 }
 
 .event {
@@ -43,8 +39,21 @@ h2 {
     color: #333;
 }
 
-p {
-    margin: 5px 0;
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    display: inline;
+    width: auto;
 }
 
 .add-event-button {
