@@ -3,67 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendário Semanal</title>
+    <title>Planner Semanal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calendar">
-        <div>
-        <h1>Calendario</h1>
-            <div class="week">
-                <div class="day">
-                    <h2>Segunda-feira</h2>
-                    <div class="event">
-                        <div class="info" id="planer 2" style="background-color: #0af3cc;">
-                            <p>Nome: Reunião de Equipe</p>
-                            <p>Data: 2023-11-06</p>
-                            <p>Categoria: Reunião</p>
-                            <p>Concluído: Não</p>
-                        </div>
+    <section>
+        <h1>Novembro</h1>
+        <div class="planner">
+            <div class="day">
+                <h2>Segunda-feira</h2>
+                <div class="event" id="evento1">
+                    <div class="info" style="background-color: hsl(314, 100%, 69%);">
+                        <label for="nome1">Nome:</label>
+                        <input type="text" id="nome1" placeholder="Nome do evento">
+                        <label for="data1">Data:</label>
+                        <input type="date" id="data1">
+                        <label for="categoria1">Categoria:</label>
+                        <input type="text" id="categoria1" placeholder="Categoria do evento">
+                        <label for="concluido1">Concluído:</label>
+                        <input type="checkbox" id="concluido1">
+                    </div>
+                    <div class="info" id="info1" data-evento="evento1">
+                        <label for="infoTexto1">Informações:</label>
+                        <textarea id="infoTexto1" rows="4" placeholder="Descrição da informação"></textarea>
                     </div>
                 </div>
-                <div class="day">
-                    <h2>Terça-feira</h2>
-                    <div class="event">
-                        <div class="info" id="planner 1" style="background-color: #e67022;">
-                            <p>Nome: Treino Python</p>
-                            <p>Data: 2023-11-07</p>
-                            <p>Categoria: Treino</p>
-                            <p>Concluído: Sim</p>
-                        </div>
+            </div>
+            <div class="day">
+                <h2>Terça-feira</h2>
+                <div class="event" id="evento2">
+                    <div class="info" style="background-color: #3c4fa2;">
+                        <label for="nome2">Nome:</label>
+                        <input type="text" id="nome2" placeholder="Nome do evento">
+                        <label for="data2">Data:</label>
+                        <input type="date" id="data2">
+                        <label for="categoria2">Categoria:</label>
+                        <input type="text" id="categoria2" placeholder="Categoria do evento">
+                        <label for="concluido2">Concluído:</label>
+                        <input type="checkbox" id="concluido2">
                     </div>
-                        <div class="info" id="planner 3" style="background-color: #0d37f0;">
-                            <p>Nome: Projeto Web</p>
-                            <p>Data: 2023-11-07</p>
-                            <p>Categoria: Projeto</p>
-                            <p>Concluído: Não</p>
-                        </div>
-                </div>
-                <div class="day"> 
-                    <h2>Quarta-feira</h2>
-                    <div class="event">
-                        <div class="info" id="planner 4" style="background-color: blueviolet;">
-                            <p>Nome: Curso AWS</p>
-                            <p>Data: 2023-11-08</p>
-                            <p>Categoria: Curso</p>
-                            <p>Concluído: Sim</p>
-                        </div>
+                    <div class="info" id="info2" data-evento="evento2">
+                        <label for="infoTexto2">Informações:</label>
+                        <textarea id="infoTexto2" rows="4" placeholder="Descrição da informação"></textarea>
                     </div>
                 </div>
-                <div class="day"> 
-                    <h2>Quinta-feira</h2>
-                    <div class="event">
-                        <div class="info" id="planner 4" style="background-color: rgb(27, 150, 123);">
-                            <p>Nome: Projeto AWS</p>
-                            <p>Data: 2023-11-08</p>
-                            <p>Categoria: Projeto</p>
-                            <p>Concluído: Nao</p>
-                        </div>
+            </div>
+            <div class="day">
+                <h2>Quarta-feira</h2>
+                <div class="event" id="evento3">
+                    <div class="info" style="background-color: #db923f;">
+                        <label for="nome3">Nome:</label>
+                        <input type="text" id="nome3" placeholder="Nome do evento">
+                        <label for="data3">Data:</label>
+                        <input type="date" id="data3">
+                        <label for="categoria3">Categoria:</label>
+                        <input type="text" id="categoria3" placeholder="Categoria do evento">
+                        <label for="concluido3">Concluído:</label>
+                        <input type="checkbox" id="concluido3">
+                    </div>
+                    <div class="info" id="info3" data-evento="evento3">
+                        <label for="infoTexto3">Informações:</label>
+                        <textarea id="infoTexto3" rows="4" placeholder="Descrição da informação"></textarea>
                     </div>
                 </div>
-        </div>
-            <!-- Adicione mais dias conforme necessário -->
-        </div>
-    </div>
-</body>
-</html>
+            </div>
+            <div class="day">
+                <h2>Quinta-feira</h2>
+                <div class="event" id="evento4">
+                    <div class="info" style="background-color: #27d43e;">
+                        <label for="nome4">Nome:</label>
+                        <input type="text" id="nome4" placeholder="Nome do evento">
+                        <label for="data4">Data:</label>
+                        <input type="date" id="data4">
+                        <label for="categoria4">Categoria:</label>
+                        <input type="text" id="categoria4" placeholder="Categoria do evento">
+                        <label for="concluido4">Concluído:</label>
+                        <input type="checkbox" id="concluido4">
+                    </div>
+                    <div class="info" id="info4" data-evento="evento4">
+                        <label for="infoTexto4">Informações:</label>
+                        <textarea id="infoTexto4" rows="4" placeholder="Descrição da informação"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <h2>Sexta-feira</h2>
+                <div class="event" id="evento5">
+                    <div class="info" style="background-color: #30dee4;">
+                        <label for="nome5">Nome:</label>
+                        <input type="text" id="nome5" placeholder="Nome do evento">
+                        <label for="data5">Data:</label>
+                        <input type="date" id="data5">
+                        <label for="categoria5">Categoria:</label>
+                        <input type="text" id="categoria5" placeholder="Categoria do evento">
+                        <label for="concluido5">Concluído:</label>
+                        <input type="checkbox" id="concluido5">
+                    </div>
+                    <div class="info" id="info5" data-evento="evento5">
+                        <label for="infoTexto5">Informações:</label>
+                        <textarea id="infoTexto5" rows="5" placeholder="Descrição da informação"></textarea>
+     </section>
