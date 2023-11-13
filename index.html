@@ -103,3 +103,54 @@
                         <label for="infoTexto5">Informações:</label>
                         <textarea id="infoTexto5" rows="5" placeholder="Descrição da informação"></textarea>
      </section>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const days = document.querySelectorAll('.day');
+    
+            days.forEach(day => {
+                day.addEventListener('click', function() {
+                    const dateInput = day.querySelector('input[type="date"]');
+                    const currentDate = new Date(dateInput.value);
+                    const newDate = new Date(currentDate);
+                    newDate.setDate(newDate.getDate() + 7);
+                    const formattedDate = newDate.toISOString().substr(0, 10);
+                    dateInput.value = formattedDate;
+    
+                    const dayOfWeek = newDate.getDay();
+                    const dayNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+                    const selectedDay = dayNames[dayOfWeek];
+    
+                    // Adicionando dados do evento
+                    const plannerData = {
+                        id: '1', // Você pode gerar um ID único
+                        nome: 'Evento',
+                        data: formattedDate,
+                        categoria: 'Categoria do evento',
+                        concluido: false,
+                        informacoes: 'Descrição do evento'
+                    };
+    
+                    // Enviando dados para o servidor
+                    fetch('http://localhost:3000/api/planner', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(plannerData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Resposta do servidor:', data);
+                    })
+                    .catch(error => {
+                        console.error('Erro ao enviar dados para o servidor:', error);
+                    });
+    
+                    // Atualizar o texto do h2
+                    const h2Element = day.querySelector('h2');
+                    h2Element.textContent = selectedDay;
+                });
+            });
+        });
+    </script>
+    
