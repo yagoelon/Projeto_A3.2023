@@ -11,13 +11,13 @@
         <h1>Novembro</h1>
         <div class="planner">
             <div class="day">
-                <h2>Segunda-feira</h2>
+               <label for="data1">Data:</label>
+                <input type="date" id="data1">
                 <div class="event" id="evento1">
                     <div class="info" style="background-color: hsl(314, 100%, 69%);">
                         <label for="nome1">Nome:</label>
                         <input type="text" id="nome1" placeholder="Nome do evento">
-                        <label for="data1">Data:</label>
-                        <input type="date" id="data1">
+                        <h2>Segunda-feira</h2>
                         <label for="categoria1">Categoria:</label>
                         <input type="text" id="categoria1" placeholder="Categoria do evento">
                         <label for="concluido1">Concluído:</label>
@@ -103,7 +103,9 @@
                         <label for="infoTexto5">Informações:</label>
                         <textarea id="infoTexto5" rows="5" placeholder="Descrição da informação"></textarea>
      </section>
+     <script src="./script.js" />
      <script>
+        /*
         document.addEventListener('DOMContentLoaded', function() {
             const days = document.querySelectorAll('.day');
     
@@ -152,5 +154,6 @@
                 });
             });
         });
+        */
     </script>
     
