@@ -9,14 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const dataComBarra = elemData.value.replaceAll("-","/")
         const newDate = new Date(dataComBarra)
         console.log('newDate',newDate);
-        // Atualizar o texto do h2 com base na nova data
-        const dayOfWeek = newDate.getDay();
-        const dayNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-        const selectedDay = dayNames[dayOfWeek];
-        const h2Element = day.querySelector('h2');
-
-        // Atualizar o texto do h2
-        h2Element.textContent = selectedDay;
     }
 
     days.forEach(day => {
