@@ -1,53 +1,3 @@
-/*
-document.addEventListener('DOMContentLoaded', function() {
-    const days = document.querySelectorAll('.day');
-
-    const elemData = document.getElementById('data1');
-    console.log("elemData",elemData);
-    elemData.onchange = function() {
-        //console.log("mudou");
-        //console.log('elemData.value',elemData.value);
-        const dataComBarra = elemData.value.replaceAll("-","/")
-        const newDate = new Date(dataComBarra)
-        //console.log('newDate',newDate);
-        // Atualizar o texto do h2 com base na nova data
-        const dayOfWeek = newDate.getDay();
-        const dayNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-        const selectedDay = dayNames[dayOfWeek];
-        //console.log('selectDay', selectedDay);
-        const h2Element = document.querySelector('h2');
-        //console.log('h2Element', h2Element);
-
-        // Atualizar o texto do h2
-        h2Element.textContent = selectedDay;
-    }
-
-     days.forEach(day => {
-        
-
-        day.addEventListener('click', function() {
-            console.log("clicou");
-            const dateInput = day.querySelector('input[type="date"]');
-            const currentDate = new Date(dateInput.value);
-            const newDate = new Date(currentDate);
-            newDate.setDate(newDate.getDate() + 6);
-            const formattedDate = newDate.toISOString().substr(0, 10);
-            dateInput.value = formattedDate;
-
-            // Atualizar o texto do h2 com base na nova data
-            const dayOfWeek = newDate.getDay();
-            const dayNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-            const selectedDay = dayNames[dayOfWeek];
-            const h2Element = day.querySelector('h2');
-
-            // Atualizar o texto do h2
-            h2Element.textContent = selectedDay;
-        });
-        
-    });
-});
-*/
-
 document.addEventListener('DOMContentLoaded', function() {
     // Função para atualizar o texto do h2 com base na data selecionada
     function updateDayOfWeek(inputElement) {
@@ -221,3 +171,26 @@ document.addEventListener('DOMContentLoaded', function() {
       
 });
 
+    // function updateMonth(monthNames) {
+    //     // const monthOfWeek = newDate.getMonth();
+    //     const mothNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho','Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    //     const selectedMonth = monthNames[mothNames];
+
+    //     // Atualizar o texto do h2 do card 1
+    //     const h1Element = document.querySelector('.month');
+    //     h1Element.textContent = selectedMonth;
+    // }
+
+    // // Obter todos os elementos de entrada de data
+    // const dateInputs1 = document.querySelectorAll('.month');
+
+    // // Adicionar um evento onchange para cada elemento de entrada de data
+    // dateInputs1.forEach(function(input) {
+    //     input.addEventListener('change', function() {
+    //         updateDayOfWeek(input);
+    //     });
+    // });
+
+    function changeMonth(newMonth) {
+        document.getElementById('monthTitle').textContent = newMonth;
+    }

@@ -15,14 +15,21 @@ body, html {
     padding: 20px;
 }
 
+.days {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
 .day {
     flex: 1;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
-    max-width: 300px;
+    max-width: 220px;
 }
 
 .event {
@@ -98,4 +105,37 @@ input[type="checkbox"] {
     text-align-last: center;
 
 }
+
+.months-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    background-color: #f0f0f0;
+}
+
+.month {
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    background-color: #db34db; /* Cor de fundo azul */
+    border: 1px solid #db34db; /* Cor da borda azul mais escura */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff; /* Cor do texto branco */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Adiciona cursor apontando para indicar que é clicável */
+    outline: none; /* Remove a borda de foco padrão */
+
+}
+
+.month:hover {
+    background-color: #db34db;
+}
+
+
+
 
