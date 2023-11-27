@@ -9,10 +9,9 @@ app.get('/lembretes/', (req, res) => {
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-lembretes = {};
 contador = 0;
 
-app.put('/lembretes/', (req, res) => {
+app.post('/lembretes/', (req, res) => {
     contador++;
     const { texto } = req.body;
     lembretes[contador] = {
