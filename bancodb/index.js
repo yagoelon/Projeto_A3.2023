@@ -44,12 +44,13 @@ app.get('/observacoes', (req, res) => {
         password: '1234'
         })
         const id = req.body.id
-        const nome = req.body.nome
+        const texto = req.body.texto
         const dt = req.body.dt
         const categoria = req.body.categoria
         const concluido = req.body.concluido
+        const cor = req.body.cor
         const sql = "INSERT INTO tb_lembretes (id, nome, dt, categoria, concluido) VALUES ("
-        + id + ", '" + nome + ", '" + dt + ", '" + categoria + ", '" + concluido + ")"
+        + id + ", '" + texto + ", '" + dt + ", '" + categoria + ", '" + concluido + ", '" + cor + ")"
         connection.query(sql, (err, results, fields) => {
         console.log (results)
         console.log(fields)

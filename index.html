@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planner Semanal</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script src="./script.js"></script>
 </head>
 <body>
@@ -27,15 +28,45 @@
                             <div class="info" id="if7" style="background-color: #ffffff;">
                                 <h2 id="card7">Domingo</h2>
                                 <label >Nome<input type="text" id="nome7" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria5" placeholder="Categoria do evento"></label>
+                                <label >Categoria<input type="text" id="categoria7" placeholder="Categoria do evento"></label>
                                 <label for="cor">Cor do evento<input type="color" id="cor7" name="cor" value="#ffffff"></label>
                                 <label >Concluído<input type="checkbox" id="concluido7"></label>
                             </div>
+                            <script>
+                                function criarLembrete(){
+                                    const novoNome7 = document.getElementById('nome7').value;
+                                    const novoData7 = document.getElementById('data7').value;
+                                    const novoCategoria7 = document.getElementById('categoria7').value;
+                                    const novoCorEvento7 = document.getElementById('cor7').value;
+                                    const novoInformacoes7 = document.getElementById('infoTexto7').value;
+                                    const novoConcluido7 = document.getElementById('concluido7').value;
+
+                                    axios.post('http://localhost:4000/lembretes', { 
+                                        "texto": novoNome7,
+                                        "concluido": novoConcluido7,
+                                        "dt": novoData7,
+                                        "categoria": novoCategoria7, 
+                                        "cor": novoCorEvento7
+                                    })
+                                        .then(resp => {
+                                            //const id_referencia = resp.data.contador;
+                                            console.log("vou fazer o post");
+                                            //axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+                                            //    "text": novoInformacoes7
+                                            //}).then(r => console.log("ja fiz"));
+                                        })                                        
+                                        .catch(e => console.log(e));
+                                        
+                                }
+                                
+                            </script>
 
                             <div class="info2" id="info7" data-evento="evento7">
-                                <label for="infoTexto7">Informações</label>
+                                <label for="infoTexto7">Observação</label>
                                 <textarea id="infoTexto7" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembrete()"> CRIAR </button>
+                                
+                                
                             </div>
 
                         </div>
@@ -190,8 +221,8 @@
         </div>            
                            
     </section> 
-    
-    <section class="months-section">
+
+  <section class="months-section">
         <button class="month january" onclick="changeMonth('Janeiro')">Janeiro</button>
         <button class="month february" onclick="changeMonth('Fevereiro')">Fevereiro</button>
         <button class="month march" onclick="changeMonth('Março')">Março</button>
@@ -205,6 +236,6 @@
         <button class="month november" onclick="changeMonth('Novembro')">Novembro</button>
         <button class="month december" onclick="changeMonth('Dezembro')">Dezembro</button>
     </section> 
-         
+    
 </body>
     
