@@ -3,67 +3,54 @@ const express = require ('express')
 //mysql é o nome de uma variável, pode ser qualquer coisa
 //mysql parece mais intuitivo do que mysql2
 const mysql = require('mysql2')
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'schema1',
+    password: 'Pabr@123'
+});
 const app = express()
 app.use(express.json())
 app.get('/lembretes', (req, res) => {
-const connection = mysql.createConnection({
-host: 'localhost',
-user: 'matheus',
-database: 'schema1',
-password: '1234'
-})
-connection.query('SELECT * FROM tb_lembretes', (err, results, fields) => {
-    res.json(results)
+    connection.query('SELECT * FROM tb_lembretes', (err, results, fields) => {
+        res.json(results)
 
-//results tem as linhas
-//fields tem meta dados sobre os resultados, caso estejam disponível
-console.log(results)
-console.log(fields)
- res.send('ok')
- })
+        //results tem as linhas
+        //fields tem meta dados sobre os resultados, caso estejam disponível
+        console.log(results)
+        console.log(fields)
+        res.send('ok')
+    })
 })
 
 app.get('/observacoes', (req, res) => {
-    const connection2 = mysql.createConnection({
-    host: 'localhost',
-    user: 'matheus',
-    database: 'schema2',
-    password: '1234'
+    connection.query('SELECT * FROM tb_observacoes', (err, results, fields) => {
+        res.json(results)
     })
-    connection.query('SELECT * FROM tb_observacoes', (err, results, fields) =>
-    {
-     res.json(results)
-     })
-    })
+})
 
-    app.post('/lembretes', (req, res) => {
-        const connection3 = mysql.createConnection({
-        host: 'localhost',
-        user: 'matheus',
-        database: 'schema1',
-        password: '1234'
-        })
-        const id = req.body.id
-        const texto = req.body.texto
-        const dt = req.body.dt
-        const categoria = req.body.categoria
-        const concluido = req.body.concluido
-        const cor = req.body.cor
-        const sql = "INSERT INTO tb_lembretes (id, nome, dt, categoria, concluido) VALUES ("
+/*app.post('/lembretes', (req, res) => {
+    const id = req.body.id
+    const texto = req.body.texto
+    const dt = req.body.dt
+    const categoria = req.body.categoria
+    const concluido = req.body.concluido
+    const cor = req.body.cor
+    const sql = "INSERT INTO tb_lembretes (id, nome, dt, categoria, concluido) VALUES ("
         + id + ", '" + texto + ", '" + dt + ", '" + categoria + ", '" + concluido + ", '" + cor + ")"
-        connection.query(sql, (err, results, fields) => {
+    connection.query(sql, (err, results, fields) => {
         console.log (results)
         console.log(fields)
-         res.send('ok')
-         })
-        })
+        res.send('ok')
+    })
+})*/
 
-        app.post('/observacoes', (req, res) => {
+app.post('/observacoes', (req, res) => {
             const connection4 = mysql.createConnection({
             host: 'localhost',
-            user: 'matheus',
+            user: 'root',
             database: 'schema2',
-            password: '1234'
+            password: 'Pabr@123'
             })
             const id = req.body.id
             const id_obs = req.body.id_obs

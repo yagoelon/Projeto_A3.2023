@@ -32,39 +32,12 @@
                                 <label for="cor">Cor do evento<input type="color" id="cor7" name="cor" value="#ffffff"></label>
                                 <label >Concluído<input type="checkbox" id="concluido7"></label>
                             </div>
-                            <script>
-                                function criarLembrete(){
-                                    const novoNome7 = document.getElementById('nome7').value;
-                                    const novoData7 = document.getElementById('data7').value;
-                                    const novoCategoria7 = document.getElementById('categoria7').value;
-                                    const novoCorEvento7 = document.getElementById('cor7').value;
-                                    const novoInformacoes7 = document.getElementById('infoTexto7').value;
-                                    const novoConcluido7 = document.getElementById('concluido7').value;
-
-                                    axios.post('http://localhost:4000/lembretes', { 
-                                        "texto": novoNome7,
-                                        "concluido": novoConcluido7,
-                                        "dt": novoData7,
-                                        "categoria": novoCategoria7, 
-                                        "cor": novoCorEvento7
-                                    })
-                                        .then(resp => {
-                                            //const id_referencia = resp.data.contador;
-                                            console.log("vou fazer o post");
-                                            //axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
-                                            //    "text": novoInformacoes7
-                                            //}).then(r => console.log("ja fiz"));
-                                        })                                        
-                                        .catch(e => console.log(e));
-                                        
-                                }
-                                
-                            </script>
-
+                            
                             <div class="info2" id="info7" data-evento="evento7">
                                 <label for="infoTexto7">Observação</label>
                                 <textarea id="infoTexto7" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="button" onclick="criarLembrete()"> CRIAR </button>
+                                <button type="button" onclick="criarLembreteseven()"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven()"> mostrar </button>
                                 
                                 
                             </div>
@@ -90,7 +63,7 @@
                             <div class="info2" id="info1" data-evento="evento1">
                                 <label for="infoTexto1">Informações</label>
                                 <textarea id="infoTexto1" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembretesone()"> CRIAR </button>
                             </div>
 
                         </div>
@@ -114,7 +87,7 @@
                             <div class="info2" id="info2" data-evento="evento2">
                                 <label for="infoTexto2">Informações</label>
                                 <textarea id="infoTexto2" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembretestwo()"> CRIAR </button>
                             </div>
 
                         </div>
@@ -137,7 +110,7 @@
                             <div class="info2" id="info3" data-evento="evento3">
                                 <label for="infoTexto3">Informações</label>
                                 <textarea id="infoTexto3" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembretesthree()"> CRIAR </button>
                             </div>
 
                         </div>
@@ -161,7 +134,7 @@
                             <div class="info2" id="info4" data-evento="evento4">
                                 <label for="infoTexto4">Informações</label>
                                 <textarea id="infoTexto4" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembretesfour()"> CRIAR </button>
                             </div>
 
                         </div>
@@ -185,7 +158,7 @@
                             <div class="info2" id="info5" data-evento="evento5">
                                 <label for="infoTexto5">Informações</label>
                                 <textarea id="infoTexto5" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembretesfive()"> CRIAR </button>
                             </div>
 
                         </div>
@@ -201,7 +174,7 @@
                             <div class="info" id="if6" style="background-color: #ffffff;">
                                 <h2 id="card6">Sábado</h2>
                                 <label >Nome<input type="text" id="nome6" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria5" placeholder="Categoria do evento"></label>
+                                <label >Categoria<input type="text" id="categoria6" placeholder="Categoria do evento"></label>
                                 <label for="cor">Cor do evento<input type="color" id="cor6" name="cor" value="#ffffff"></label>
                                 <label >Concluído<input type="checkbox" id="concluido6"></label>
                             </div>
@@ -209,7 +182,7 @@
                             <div class="info2" id="info6" data-evento="evento6">
                                 <label for="infoTexto6">Informações</label>
                                 <textarea id="infoTexto6" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="submit"> SALVAR </button>
+                                <button type="button" onclick="criarLembretesix()"> CRIAR </button>
                             </div>
 
                         </div>

@@ -170,6 +170,280 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById("cor7").addEventListener("input", alterarCor);
       
 });
+function criarLembreteseven() {
+    const novoNome7 = document.getElementById('nome7').value;
+    const novoData7 = document.getElementById('data7').value;
+    const novoCategoria7 = document.getElementById('categoria7').value;
+    const novoCorEvento7 = document.getElementById('cor7').value;
+    const novoInformacoes7 = document.getElementById('infoTexto7').value;
+    const novoConcluido7 = document.getElementById('concluido7').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome7,
+        "concluido": novoConcluido7,
+        "dt": novoData7,
+        "categoria": novoCategoria7,
+        "cor": novoCorEvento7
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes7
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+function criarLembretesix() {
+    const novoNome6 = document.getElementById('nome6').value;
+    const novoData6 = document.getElementById('data6').value;
+    const novoCategoria6 = document.getElementById('categoria6').value;
+    const novoCorEvento6 = document.getElementById('cor6').value;
+    const novoInformacoes6 = document.getElementById('infoTexto6').value;
+    const novoConcluido6 = document.getElementById('concluido6').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome6,
+        "concluido": novoConcluido6,
+        "dt": novoData6,
+        "categoria": novoCategoria6,
+        "cor": novoCorEvento6
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes6
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+function criarLembretesfive() {
+    const novoNome5 = document.getElementById('nome5').value;
+    const novoData5 = document.getElementById('data5').value;
+    const novoCategoria5 = document.getElementById('categoria5').value;
+    const novoCorEvento5 = document.getElementById('cor5').value;
+    const novoInformacoes5 = document.getElementById('infoTexto5').value;
+    const novoConcluido5 = document.getElementById('concluido5').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome5,
+        "concluido": novoConcluido5,
+        "dt": novoData5,
+        "categoria": novoCategoria5,
+        "cor": novoCorEvento5
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes5
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+function criarLembretesfour() {
+    const novoNome4 = document.getElementById('nome4').value;
+    const novoData4 = document.getElementById('data4').value;
+    const novoCategoria4 = document.getElementById('categoria4').value;
+    const novoCorEvento4= document.getElementById('cor4').value;
+    const novoInformacoes4 = document.getElementById('infoTexto4').value;
+    const novoConcluido4 = document.getElementById('concluido4').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome4,
+        "concluido": novoConcluido4,
+        "dt": novoData4,
+        "categoria": novoCategoria4,
+        "cor": novoCorEvento4
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes4
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+function criarLembretesthree() {
+    const novoNome3 = document.getElementById('nome3').value;
+    const novoData3 = document.getElementById('data3').value;
+    const novoCategoria3 = document.getElementById('categoria3').value;
+    const novoCorEvento3= document.getElementById('cor3').value;
+    const novoInformacoes3 = document.getElementById('infoTexto3').value;
+    const novoConcluido3 = document.getElementById('concluido3').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome3,
+        "concluido": novoConcluido3,
+        "dt": novoData3,
+        "categoria": novoCategoria3,
+        "cor": novoCorEvento3
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes3
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+function criarLembretestwo() {
+    const novoNome2 = document.getElementById('nome2').value;
+    const novoData2 = document.getElementById('data2').value;
+    const novoCategoria2 = document.getElementById('categoria2').value;
+    const novoCorEvento2= document.getElementById('cor2').value;
+    const novoInformacoes2 = document.getElementById('infoTexto2').value;
+    const novoConcluido2 = document.getElementById('concluido2').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome2,
+        "concluido": novoConcluido2,
+        "dt": novoData2,
+        "categoria": novoCategoria2,
+        "cor": novoCorEvento2
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes2
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+function criarLembretesone() {
+    const novoNome1 = document.getElementById('nome1').value;
+    const novoData1 = document.getElementById('data1').value;
+    const novoCategoria1 = document.getElementById('categoria1').value;
+    const novoCorEvento1= document.getElementById('cor1').value;
+    const novoInformacoes1 = document.getElementById('infoTexto1').value;
+    const novoConcluido1 = document.getElementById('concluido1').value;
+
+    axios.post('http://localhost:4000/lembretes', {
+        "texto": novoNome1,
+        "concluido": novoConcluido1,
+        "dt": novoData1,
+        "categoria": novoCategoria1,
+        "cor": novoCorEvento1
+    })
+    .then(resp => {
+        const id_referencia = resp.data.contador;
+
+        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            "text": novoInformacoes1
+        })
+        .then(r => console.log("Observação adicionada com sucesso"))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+
+}
+
+function obterLembreteseven(numero) {
+    axios.get('http://localhost:4000/lembretes')
+    .then(r => {
+        console.log(r);
+        document.getElementById('nome' + numero).value = r.data[1].nome;
+        document.getElementById('data7').value = r.data[1].dt;
+        document.getElementById('categoria7').value = r.data[1].categoria;
+        document.getElementById('cor7').value = r.data[1].cor;
+        document.getElementById('concluido7').checked = r.data[1].concluido;
+        // document.getElementById('infoTexto7').value = r.data[1].nome;
+
+        
+    })
+//TEM QUE CRIAR O GET direiro a parte escrita numero é para fazer de forma simplificada e não ter que repitir 7 vezes a function
+    axios.get('http://localhost:5000/lembretes/${id_referencia}/observacoes')
+    .then(r => {
+        console.log(r);
+        document.getElementById('infoTexto7' + numero).value = r.data[1].nome;
+})
+
+}
+//    .catch(e => console.log(e));
+//
+//        "texto": novoNome7,
+//        "concluido": novoConcluido7,
+//        "dt": novoData7,
+//        "categoria": novoCategoria7,
+//        "cor": novoCorEvento7
+//    
+//     document.getElementById('nome7').value;
+//    document.getElementById('data7').value;
+//    document.getElementById('categoria7').value;
+//    ocument.getElementById('cor7').value;
+//    document.getElementById('infoTexto7').value;
+//  document.getElementById('concluido7').value;
+//
+//    axios.post('http://localhost:4000/lembretes', {
+//        "texto": novoNome7,
+//        "concluido": novoConcluido7,
+//        "dt": novoData7,
+//        "categoria": novoCategoria7,
+//        "cor": novoCorEvento7
+//    })
+//    .then(resp => {
+//        const id_referencia = resp.data.contador;
+//
+//        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+//            "text": novoInformacoes7
+//        })
+//        .then(r => console.log("Observação adicionada com sucesso"))
+//        .catch(e => console.log(e));
+//    })
+//   .catch(e => console.log(e));
+
+}
+
+
+
+
+/*function criarLembrete(){
+    const novoNome7 = document.getElementById('nome7').value;
+    const novoData7 = document.getElementById('data7').value;
+    const novoCategoria7 = document.getElementById('categoria7').value;
+    const novoCorEvento7 = document.getElementById('cor7').value;
+    const novoInformacoes7 = document.getElementById('infoTexto7').value;
+    const novoConcluido7 = document.getElementById('concluido7').value;
+
+    axios.post('http://localhost:4000/lembretes', { 
+        "texto": novoNome7,
+        "concluido": novoConcluido7,
+        "dt": novoData7,
+        "categoria": novoCategoria7, 
+        "cor": novoCorEvento7
+    })
+        .then(resp => {
+            //const id_referencia = resp.data.contador;
+            console.log("vou fazer o post");
+            //axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
+            //    "text": novoInformacoes7
+            //}).then(r => console.log("ja fiz"));
+        })                                        
+        .catch(e => console.log(e));
+        
+}*/
 
     // function updateMonth(monthNames) {
     //     // const monthOfWeek = newDate.getMonth();
