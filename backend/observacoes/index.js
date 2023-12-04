@@ -10,7 +10,7 @@ const observacoesPorLembreteId = {};
 
 app.post('/lembretes/:id/observacoes', async (req, res) => {
     const idObs = uuidv4();
-    const { text } = req.body;
+    const{text}= req.body;
 
     const observacoesDoLembrete =
     observacoesPorLembreteId[req.params.id] || [];

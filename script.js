@@ -170,26 +170,26 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById("cor7").addEventListener("input", alterarCor);
       
 });
-function criarLembreteseven() {
-    const novoNome7 = document.getElementById('nome7').value;
-    const novoData7 = document.getElementById('data7').value;
-    const novoCategoria7 = document.getElementById('categoria7').value;
-    const novoCorEvento7 = document.getElementById('cor7').value;
-    const novoInformacoes7 = document.getElementById('infoTexto7').value;
-    const novoConcluido7 = document.getElementById('concluido7').value;
+function criarLembretes(numero) {
+    const novoNome = document.getElementById('nome'+ numero).value;
+    const novoData = document.getElementById('data'+ numero).value;
+    const novoCategoria = document.getElementById('categoria'+ numero).value;
+    const novoCorEvento = document.getElementById('cor'+ numero).value;
+    const novoInformacoes = document.getElementById('infoTexto'+ numero).value;
+    const novoConcluido = document.getElementById('concluido'+ numero).value;
 
     axios.post('http://localhost:4000/lembretes', {
-        "texto": novoNome7,
-        "concluido": novoConcluido7,
-        "dt": novoData7,
-        "categoria": novoCategoria7,
-        "cor": novoCorEvento7
+        "texto": novoNome,
+        "concluido": novoConcluido,
+        "dt": novoData,
+        "categoria": novoCategoria,
+        "cor": novoCorEvento
     })
     .then(resp => {
         const id_referencia = resp.data.contador;
 
         axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
-            "text": novoInformacoes7
+            "text": novoInformacoes
         })
         .then(r => console.log("Observação adicionada com sucesso"))
         .catch(e => console.log(e));
@@ -305,79 +305,24 @@ function criarLembretesthree() {
     .catch(e => console.log(e));
 
 }
-function criarLembretestwo() {
-    const novoNome2 = document.getElementById('nome2').value;
-    const novoData2 = document.getElementById('data2').value;
-    const novoCategoria2 = document.getElementById('categoria2').value;
-    const novoCorEvento2= document.getElementById('cor2').value;
-    const novoInformacoes2 = document.getElementById('infoTexto2').value;
-    const novoConcluido2 = document.getElementById('concluido2').value;
 
-    axios.post('http://localhost:4000/lembretes', {
-        "texto": novoNome2,
-        "concluido": novoConcluido2,
-        "dt": novoData2,
-        "categoria": novoCategoria2,
-        "cor": novoCorEvento2
-    })
-    .then(resp => {
-        const id_referencia = resp.data.contador;
 
-        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
-            "text": novoInformacoes2
-        })
-        .then(r => console.log("Observação adicionada com sucesso"))
-        .catch(e => console.log(e));
-    })
-    .catch(e => console.log(e));
-
-}
-function criarLembretesone() {
-    const novoNome1 = document.getElementById('nome1').value;
-    const novoData1 = document.getElementById('data1').value;
-    const novoCategoria1 = document.getElementById('categoria1').value;
-    const novoCorEvento1= document.getElementById('cor1').value;
-    const novoInformacoes1 = document.getElementById('infoTexto1').value;
-    const novoConcluido1 = document.getElementById('concluido1').value;
-
-    axios.post('http://localhost:4000/lembretes', {
-        "texto": novoNome1,
-        "concluido": novoConcluido1,
-        "dt": novoData1,
-        "categoria": novoCategoria1,
-        "cor": novoCorEvento1
-    })
-    .then(resp => {
-        const id_referencia = resp.data.contador;
-
-        axios.post(`http://localhost:5000/lembretes/${id_referencia}/observacoes`, {
-            "text": novoInformacoes1
-        })
-        .then(r => console.log("Observação adicionada com sucesso"))
-        .catch(e => console.log(e));
-    })
-    .catch(e => console.log(e));
-
-}
 
 function obterLembreteseven(numero) {
     axios.get('http://localhost:4000/lembretes')
     .then(r => {
         console.log(r);
-        document.getElementById('nome' + numero).value = r.data[1].nome;
+        document.getElementById('nome'+numero).value = r.data[1].nome;
         document.getElementById('data7').value = r.data[1].dt;
         document.getElementById('categoria7').value = r.data[1].categoria;
         document.getElementById('cor7').value = r.data[1].cor;
         document.getElementById('concluido7').checked = r.data[1].concluido;
-        // document.getElementById('infoTexto7').value = r.data[1].nome;
-
-        
     })
 //TEM QUE CRIAR O GET direiro a parte escrita numero é para fazer de forma simplificada e não ter que repitir 7 vezes a function
     axios.get('http://localhost:5000/lembretes/${id_referencia}/observacoes')
     .then(r => {
         console.log(r);
-        document.getElementById('infoTexto7' + numero).value = r.data[1].nome;
+        document.getElementById('infoTexto'+numero).value = r.data[1].nome;
 })
 
 }
@@ -413,11 +358,6 @@ function obterLembreteseven(numero) {
 //        .catch(e => console.log(e));
 //    })
 //   .catch(e => console.log(e));
-
-}
-
-
-
 
 /*function criarLembrete(){
     const novoNome7 = document.getElementById('nome7').value;

@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'schema1',
-    password: 'Pabr@123'
+    password: 'senha123'
 });
 //armazenar os dados enquanto nao tem banco, pagina 4.3.10 da apostila
 const lembretes = {}
