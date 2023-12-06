@@ -18,7 +18,7 @@ app.get('/lembretes/', (req, res) => {
         console.log(results)
         console.log(fields)
         res.send(results);
-    })    
+    })
 });
 
 const bodyParser = require('body-parser');
@@ -27,20 +27,17 @@ contador = 0;
 
 app.post('/lembretes/', (req, res) => {
     contador++;
-    const texto  = req.body.texto;
-    const dt  = req.body.dt;
+    const texto = req.body.texto;
+    const dt = req.body.dt;
     const concluido = req.body.concluido === 'on' ? true : false;
     const cor = req.body.cor;
     const categoria = req.body.categoria;
 
-   // lembretes[contador] = {
-      // contador, texto, dt, concluido, cor, categoria
-    //}
     const sql = "INSERT INTO tb_lembretes (id, nome, dt, categoria, concluido, cor) VALUES ("
         + contador + ", '" + texto + "', '" + dt + "', '" + categoria + "', " + concluido + ", '" + cor + "')"
     console.log(sql)
-        connection.query(sql, (err, results, fields) => {
-        console.log (results)
+    connection.query(sql, (err, results, fields) => {
+        console.log(results)
         console.log(fields)
     })
     res.status(201).send(lembretes[contador]);

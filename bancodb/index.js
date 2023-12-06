@@ -1,4 +1,4 @@
-const express = require ('express')
+const express = require('express')
 
 //mysql é o nome de uma variável, pode ser qualquer coisa
 //mysql parece mais intuitivo do que mysql2
@@ -46,24 +46,24 @@ app.get('/observacoes', (req, res) => {
 })*/
 
 app.post('/observacoes', (req, res) => {
-            const connection4 = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            database: 'schema2',
-            password: 'senha123'
-            })
-            const id = req.body.id
-            const id_obs = req.body.id_obs
-            const obs = req.body.obs
-            const sql = "INSERT INTO tb_observacoes (id, id_obs, obs) VALUES ("
-            + id + ", '" + id_obs + ", '" + obs + ")"
-            connection.query(sql, (err, results, fields) => {
-            console.log (results)
-            console.log(fields)
-             res.send('ok')
-             })
-            })
-            
+    const connection4 = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        database: 'schema2',
+        password: 'senha123'
+    })
+    const id = req.body.id
+    const id_obs = req.body.id_obs
+    const obs = req.body.obs
+    const sql = "INSERT INTO tb_observacoes (id, id_obs, obs) VALUES ("
+        + id + ", '" + id_obs + ", '" + obs + ")"
+    connection.query(sql, (err, results, fields) => {
+        console.log(results)
+        console.log(fields)
+        res.send('ok')
+    })
+})
+
 
 const porta = 3000
 app.listen(porta, () => console.log(`Executando. Porta ${porta}`))

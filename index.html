@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +9,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script src="./script.js"></script>
 </head>
+
 <body>
     <section>
-        
+
         <div class="mes">
-            <h1 id="monthTitle">Novembro</h1>
+            <h1 id="projectName">Byte Planner</h1>
+
         </div>
 
         <div class="planner">
 
-            <section> 
-                <div class="days"> 
+            <section>
+                <div class="days">
                     <div class="day">
 
-                        <label class="lbfull" >Data<input class="date-input7" type="date" id="data7"></label>
+                        <label class="lbfull">Data<input class="date-input7" type="date" id="data7"></label>
 
                         <div class="event" id="evento7">
-                            
+
                             <div class="info" id="if7" style="background-color: #ffffff;">
                                 <h2 id="card7">Domingo</h2>
-                                <label >Nome<input type="text" id="nome7" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria7" placeholder="Categoria do evento"></label>
-                                <label for="cor">Cor do evento<input type="color" id="cor7" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido7"></label>
+                                <label>Nome<input type="text" id="nome7" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria7"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor7" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido7"></label>
                             </div>
-                            
+
                             <div class="info2" id="info7" data-evento="evento7">
                                 <label for="infoTexto7">Observação</label>
                                 <textarea id="infoTexto7" rows="4" placeholder="Descrição da informação"></textarea>
                                 <button type="button" onclick="criarLembretes(7)"> CRIAR </button>
-                                <button id="refresh" onclick="obterLembreteseven(7)"> mostrar </button>
-                                
-                                
+                                <button id="refresh" onclick="obterLembreteseven(7)"> EXIBIR LEMBRETE SALVO </button>
+
+
                             </div>
 
                         </div>
@@ -54,16 +59,19 @@
 
                             <div class="info" id="if1" style="background-color: hsl(0, 0%, 100%);">
                                 <h2 id="card1">Segunda-feira</h2>
-                                <label >Nome<input type="text" id="nome1" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria1" placeholder="Categoria do evento"></label>
-                                <label for="cor">Cor do evento<input type="color" id="cor1" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido1"></label>
+                                <label>Nome<input type="text" id="nome1" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria1"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor1" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido1"></label>
                             </div>
-                            
+
                             <div class="info2" id="info1" data-evento="evento1">
                                 <label for="infoTexto1">Informações</label>
                                 <textarea id="infoTexto1" rows="4" placeholder="Descrição da informação"></textarea>
                                 <button type="button" onclick="criarLembretes(1)"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven(1)"> EXIBIR LEMBRETE SALVO </button>
                             </div>
 
                         </div>
@@ -78,16 +86,19 @@
 
                             <div class="info" id="if2" style="background-color: #ffffff;">
                                 <h2 id="card2">Terça-feira</h2>
-                                <label >Nome<input type="text" id="nome2" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria2" placeholder="Categoria do evento"></label>
-                                <label for="cor2">Cor do evento<input type="color" id="cor2" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido2"></label>
+                                <label>Nome<input type="text" id="nome2" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria2"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor2">Cor do evento<input type="color" id="cor2" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido2"></label>
                             </div>
 
                             <div class="info2" id="info2" data-evento="evento2">
                                 <label for="infoTexto2">Informações</label>
                                 <textarea id="infoTexto2" rows="4" placeholder="Descrição da informação"></textarea>
                                 <button type="button" onclick="criarLembretes(2)"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven(2)"> EXIBIR LEMBRETE SALVO </button>
                             </div>
 
                         </div>
@@ -101,16 +112,19 @@
                         <div class="event" id="evento3">
                             <div class="info" id="if3" style="background-color: #ffffff;">
                                 <h2 id="card3">Quarta-feira</h2>
-                                <label >Nome<input type="text" id="nome3" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria3" placeholder="Categoria do evento"></label>
-                                <label for="cor">Cor do evento<input type="color" id="cor3" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido3"></label>
+                                <label>Nome<input type="text" id="nome3" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria3"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor3" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido3"></label>
                             </div>
 
                             <div class="info2" id="info3" data-evento="evento3">
                                 <label for="infoTexto3">Informações</label>
                                 <textarea id="infoTexto3" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="button" onclick="criarLembretesthree()"> CRIAR </button>
+                                <button type="button" onclick="criarLembretesthree(3)"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven(3)"> EXIBIR LEMBRETE SALVO </button>
                             </div>
 
                         </div>
@@ -122,19 +136,22 @@
                         <label class="lbfull">Data: <input class="date-input4" type="date" id="data4"></label>
 
                         <div class="event" id="evento4">
-                        
+
                             <div class="info" id="if4" style="background-color: #ffffff;">
                                 <h2 id="card4">Quinta-feira</h2>
-                                <label >Nome<input type="text" id="nome4" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria4" placeholder="Categoria do evento"></label>
-                                <label for="cor">Cor do evento<input type="color" id="cor4" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido4"></label>
+                                <label>Nome<input type="text" id="nome4" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria4"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor4" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido4"></label>
                             </div>
 
                             <div class="info2" id="info4" data-evento="evento4">
                                 <label for="infoTexto4">Informações</label>
                                 <textarea id="infoTexto4" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="button" onclick="criarLembretesfour()"> CRIAR </button>
+                                <button type="button" onclick="criarLembretesfour(4)"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven(4)"> EXIBIR LEMBRETE SALVO </button>
                             </div>
 
                         </div>
@@ -143,22 +160,25 @@
 
                     <div class="day">
 
-                        <label class="lbfull" >Data<input class="date-input5" type="date" id="data5"></label>
+                        <label class="lbfull">Data<input class="date-input5" type="date" id="data5"></label>
 
                         <div class="event" id="evento5">
-                            
+
                             <div class="info" id="if5" style="background-color: #ffffff;">
                                 <h2 id="card5">Sexta-feira</h2>
-                                <label >Nome<input type="text" id="nome5" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria5" placeholder="Categoria do evento"></label>
-                                <label for="cor">Cor do evento<input type="color" id="cor5" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido5"></label>
+                                <label>Nome<input type="text" id="nome5" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria5"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor5" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido5"></label>
                             </div>
 
                             <div class="info2" id="info5" data-evento="evento5">
                                 <label for="infoTexto5">Informações</label>
                                 <textarea id="infoTexto5" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="button" onclick="criarLembretesfive()"> CRIAR </button>
+                                <button type="button" onclick="criarLembretesfive(5)"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven(5)"> EXIBIR LEMBRETE SALVO </button>
                             </div>
 
                         </div>
@@ -167,22 +187,25 @@
 
                     <div class="day">
 
-                        <label class="lbfull" >Data<input class="date-input6" type="date" id="data6"></label>
+                        <label class="lbfull">Data<input class="date-input6" type="date" id="data6"></label>
 
                         <div class="event" id="evento6">
-                            
+
                             <div class="info" id="if6" style="background-color: #ffffff;">
                                 <h2 id="card6">Sábado</h2>
-                                <label >Nome<input type="text" id="nome6" placeholder="Nome do evento"></label>
-                                <label >Categoria<input type="text" id="categoria6" placeholder="Categoria do evento"></label>
-                                <label for="cor">Cor do evento<input type="color" id="cor6" name="cor" value="#ffffff"></label>
-                                <label >Concluído<input type="checkbox" id="concluido6"></label>
+                                <label>Nome<input type="text" id="nome6" placeholder="Nome do evento"></label>
+                                <label>Categoria<input type="text" id="categoria6"
+                                        placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor6" name="cor"
+                                        value="#ffffff"></label>
+                                <label>Concluído<input type="checkbox" id="concluido6"></label>
                             </div>
 
                             <div class="info2" id="info6" data-evento="evento6">
                                 <label for="infoTexto6">Informações</label>
                                 <textarea id="infoTexto6" rows="4" placeholder="Descrição da informação"></textarea>
-                                <button type="button" onclick="criarLembretesix()"> CRIAR </button>
+                                <button type="button" onclick="criarLembretesix(6)"> CRIAR </button>
+                                <button id="refresh" onclick="obterLembreteseven(6)"> EXIBIR LEMBRETE SALVO </button>
                             </div>
 
                         </div>
@@ -191,24 +214,7 @@
                 </div>
             </section>
 
-        </div>            
-                           
-    </section> 
+        </div>
 
-  <section class="months-section">
-        <button class="month january" onclick="changeMonth('Janeiro')">Janeiro</button>
-        <button class="month february" onclick="changeMonth('Fevereiro')">Fevereiro</button>
-        <button class="month march" onclick="changeMonth('Março')">Março</button>
-        <button class="month april" onclick="changeMonth('Abril')">Abril</button>
-        <button class="month may" onclick="changeMonth('Maio')">Maio</button>
-        <button class="month june" onclick="changeMonth('Junho')">Junho</button>
-        <button class="month july" onclick="changeMonth('Julho')">Julho</button>
-        <button class="month august" onclick="changeMonth('Agosto')">Agosto</button>
-        <button class="month september" onclick="changeMonth('Setembro')">Setembro</button>
-        <button class="month october" onclick="changeMonth('Outubro')">Outubro</button>
-        <button class="month november" onclick="changeMonth('Novembro')">Novembro</button>
-        <button class="month december" onclick="changeMonth('Dezembro')">Dezembro</button>
-    </section> 
-    
+    </section>
 </body>
-    
