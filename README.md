@@ -57,33 +57,3 @@ Agora já está tudo pronto pra rodar e para usar nosso planner, voce só precis
 *NOTA: Sabemos que o microserviço de observações não está salvando no banco e portanto nao retorna no front, tentamos encontrar o que estava acontecendo, mas infelizmente nao conseguimos pois os horários dos integrantes do grupo nao batiam e ficamos com o prazo apertado. 
 
 De toda forma, obrigado pela paciencia em nos ajudar em sala de aula pra conseguir desenvolver este projeto.
-create database schema1;
-use schema1;
-create table tb_lembretes (
-	id int primary key,
-    nome varchar(200) not null,
-    dt varchar(20),
-    categoria varchar(50),
-    concluido boolean,
-    cor varchar(7)
-    );
-    
-select * from tb_lembretes;
-
-create database schema2;
-use schema2;
-CREATE TABLE tb_observacoes (
-    id INT PRIMARY KEY,
-    id_obs VARCHAR(200),
-    obs VARCHAR(500) NOT NULL
-);
-select * from tb_observacoes;
-
-
-Vale lembrar que no arquivo index de lembretes e de observações, há um trecho onde ele faz a conexão com o banco de dados, nao se esqueça de alterar o user e o password para os cadastrados em sua máquina.
-
-
-
-*NOTA: Sabemos que o microserviço de observações não está salvando no banco e portanto nao retorna no front, tentamos encontrar o que estava acontecendo, mas infelizmente nao conseguimos pois os horários dos integrantes do grupo nao batiam e ficamos com o prazo apertado. 
-
-De toda forma, obrigado pela paciencia em nos ajudar em sala de aula pra conseguir desenvolver este projeto.
