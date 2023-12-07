@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner Semanal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <section>
+        
+       
+
+        <div class="planner">
+
+            <section> 
+                <div class="days"> 
+                    <div class="day">
+
+                        <label class="lbfull" >Data<input class="date-input7" type="date" id="data7"></label>
+
+                        <div class="event" id="evento7">
+                            
+                            <div class="info" id="if7" style="background-color: #ffffff;">
+                                <h2 id="card7">Domingo</h2>
+                                <label >Nome<input type="text" id="nome7" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria7" placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor7" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido7"></label>
+                            </div>
+                            
+                            <div class="info2" id="info7" data-evento="evento7">
+                                <label for="infoTexto7">Observação</label>
+                                <textarea id="infoTexto7" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembreteseven()"> Criar </button>
+                                <button id="refresh" onclick="obterLembreteseven()"> Mostrar </button>
+                                
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="day">
+
+                        <label class="lbfull">Data<input class="date-input1" type="date" id="data1"> </label>
+
+                        <div class="event" id="evento1">
+
+                            <div class="info" id="if1" style="background-color: hsl(0, 0%, 100%);">
+                                <h2 id="card1">Segunda-feira</h2>
+                                <label >Nome<input type="text" id="nome1" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria1" placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor1" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido1"></label>
+                            </div>
+                            
+                            <div class="info2" id="info1" data-evento="evento1">
+                                <label for="infoTexto1">Informações</label>
+                                <textarea id="infoTexto1" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembretesone()"> Criar </button>
+                                <button id="refresh1" onclick="obterLembretesone()"> Mostrar </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="day">
+
+                        <label class="lbfull">Data: <input class="date-input2" type="date" id="data2"></label>
+
+                        <div class="event" id="evento2">
+
+                            <div class="info" id="if2" style="background-color: #ffffff;">
+                                <h2 id="card2">Terça-feira</h2>
+                                <label >Nome<input type="text" id="nome2" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria2" placeholder="Categoria do evento"></label>
+                                <label for="cor2">Cor do evento<input type="color" id="cor2" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido2"></label>
+                            </div>
+
+                            <div class="info2" id="info2" data-evento="evento2">
+                                <label for="infoTexto2">Informações</label>
+                                <textarea id="infoTexto2" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembretestwo()"> Criar </button>
+                                <button id="refresh1" onclick="obterLembretestwo()"> Mostrar </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="day">
+
+                        <label class="lbfull">Data: <input class="date-input3" type="date" id="data3"></label>
+
+                        <div class="event" id="evento3">
+                            <div class="info" id="if3" style="background-color: #ffffff;">
+                                <h2 id="card3">Quarta-feira</h2>
+                                <label >Nome<input type="text" id="nome3" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria3" placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor3" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido3"></label>
+                            </div>
+
+                            <div class="info2" id="info3" data-evento="evento3">
+                                <label for="infoTexto3">Informações</label>
+                                <textarea id="infoTexto3" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembretesthree()"> Criar </button>
+                                <button id="refresh1" onclick="obterLembretesthree()"> Mostrar </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="day">
+
+                        <label class="lbfull">Data: <input class="date-input4" type="date" id="data4"></label>
+
+                        <div class="event" id="evento4">
+                        
+                            <div class="info" id="if4" style="background-color: #ffffff;">
+                                <h2 id="card4">Quinta-feira</h2>
+                                <label >Nome<input type="text" id="nome4" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria4" placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor4" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido4"></label>
+                            </div>
+
+                            <div class="info2" id="info4" data-evento="evento4">
+                                <label for="infoTexto4">Informações</label>
+                                <textarea id="infoTexto4" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembretesfour()"> Criar </button>
+                                <button id="refresh1" onclick="obterLembretesfour()"> Mostrar </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="day">
+
+                        <label class="lbfull" >Data<input class="date-input5" type="date" id="data5"></label>
+
+                        <div class="event" id="evento5">
+                            
+                            <div class="info" id="if5" style="background-color: #ffffff;">
+                                <h2 id="card5">Sexta-feira</h2>
+                                <label >Nome<input type="text" id="nome5" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria5" placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor5" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido5"></label>
+                            </div>
+
+                            <div class="info2" id="info5" data-evento="evento5">
+                                <label for="infoTexto5">Informações</label>
+                                <textarea id="infoTexto5" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembretesfive()"> Criar </button>
+                                <button id="refresh1" onclick="obterLembretesfive()"> Mostrar </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="day">
+
+                        <label class="lbfull" >Data<input class="date-input6" type="date" id="data6"></label>
+
+                        <div class="event" id="evento6">
+                            
+                            <div class="info" id="if6" style="background-color: #ffffff;">
+                                <h2 id="card6">Sábado</h2>
+                                <label >Nome<input type="text" id="nome6" placeholder="Nome do evento"></label>
+                                <label >Categoria<input type="text" id="categoria6" placeholder="Categoria do evento"></label>
+                                <label for="cor">Cor do evento<input type="color" id="cor6" name="cor" value="#ffffff"></label>
+                                <label >Concluído<input type="checkbox" id="concluido6"></label>
+                            </div>
+
+                            <div class="info2" id="info6" data-evento="evento6">
+                                <label for="infoTexto6">Informações</label>
+                                <textarea id="infoTexto6" rows="4" placeholder="Descrição da informação"></textarea>
+                                <button type="button" onclick="criarLembretesix()"> Criar </button>
+                                <button id="refresh1" onclick="obterLembretessix()"> Mostrar </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>            
+                           
+    </section> 
+
+
+
+</body>
+    

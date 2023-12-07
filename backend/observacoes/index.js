@@ -5,44 +5,36 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors());
+const mysql = require('mysql2');
 
-const observacoesPorLembreteId = {};
+const connection2 = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'schema2',
+    password: 'Pabr@123'
+});
+
+//const observacoesPorLembreteId = {};
 
 app.post('/lembretes/:id/observacoes', async (req, res) => {
-    const idObs = uuidv4();
-    const { text } = req.body;
-
-    const observacoesDoLembrete =
-    observacoesPorLembreteId[req.params.id] || [];
-    observacoesDoLembrete.push({ id: idObs, text });
-    observacoesPorLembreteId[req.params.id] =
-    observacoesDoLembrete;
-    res.status(201).send(observacoesDoLembrete);
-});
+        const id = req.body.id
+        const id_obs = req.body.id_obs
+        const obs = req.body.obs
+        const sql = "INSERT INTO tb_observacoes (id, id_obs, obs) VALUES ("
+        + id + ", '" + id_obs + ", '" + obs + ")"
+        connection.query(sql, (err, results, fields) => {
+        console.log (results)
+        console.log(fields)
+         res.send('ok')
+         })
+        })
 
 app.get('/lembretes/:id/observacoes', (req, res) => {
-    res.send(observacoesPorLembreteId[req.params.id] || []);
-});
-
-//app.post("/eventos", (req, res) => {
-    //console.log(req.body);
-   // res.status(200).send({ msg: "ok" });
-//});
+    connection.query('SELECT * FROM tb_observacoes', (err, results, fields) => {
+        res.json(results)
+    })
+})
 
 app.listen(5000, (() => {
     console.log('Observacoes. Porta 5000');
 }));
-
-//const { vs : uuidv4 } = require('uuid');
-
-/*app.post('/lembretes/:id/observacoes', (req, res) => {
-    const id0bs = uuivd4();
-    const { texto } = req.body;
-
-    const observacoesDoLembrete =
-    observacoesPorLembreteId[req.params.id] || [];
-observacoesDoLembrete.push({ id: idObs, texto });
-observacoesPorLembreteId[req.params.id] =
-observacoesDoLembrete;
-res.status(201).send(observacoesDoLembrete);
-})*/
